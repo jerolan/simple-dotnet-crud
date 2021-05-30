@@ -5,11 +5,11 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionsEventSourcing", "TransactionsEventSourcing", "{C2BF31F8-DB6D-4136-B847-3585209B2C91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws-csharp", "TransactionsEventSourcing\src\aws-csharp.csproj", "{03BCBB49-35A2-445C-BABE-4E952E514E8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsEventSourcing", "TransactionsEventSourcing\src\TransactionsEventSourcing.csproj", "{03BCBB49-35A2-445C-BABE-4E952E514E8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AEB9628C-7D77-4518-9899-F14B36E13B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsEventSourcing.Tests", "TransactionsEventSourcing\test\TransactionsEventSourcing.Tests\TransactionsEventSourcing.Tests.csproj", "{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsEventSourcing.Tests", "TransactionsEventSourcing\test\TransactionsEventSourcing.Tests.csproj", "{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,12 +1,14 @@
+using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using System.Collections.Generic;
+using System.Net;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
-namespace AwsDotnetCsharp
+namespace TransactionsEventSourcing
 {
   public class Controller
   {
-    public List<Transaction> GetTransactionsHandler()
+    public APIGatewayProxyResponse GetTransactionsHandler(APIGatewayProxyRequest request)
     {
       var list = new List<Transaction>();
 
@@ -24,7 +26,13 @@ namespace AwsDotnetCsharp
         }
       );
 
-      return list;
+      var response = new APIGatewayProxyResponse()
+      {
+        StatusCode = (int)HttpStatusCode.OK,
+        Body = list.ToString(),
+      };
+
+      return response;
     }
   }
 }

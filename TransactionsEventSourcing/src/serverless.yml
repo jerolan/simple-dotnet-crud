@@ -10,7 +10,7 @@ package:
 
 functions:
   get-transactions:
-    handler: CsharpHandlers::AwsDotnetCsharp.Controller::GetTransactionsHandler
+    handler: CsharpHandlers::TransactionsEventSourcing.Controller::GetTransactionsHandler
 
     package:
       artifact: bin/Release/netcoreapp3.1/hello.zip
