@@ -1,6 +1,0 @@
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/CsharpHandlers.dll
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/CsharpHandlers.deps.json
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/CsharpHandlers.runtimeconfig.json
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/CsharpHandlers.pdb
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/Amazon.Lambda.Core.dll
-/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
