@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JcAFku/DtzTKmoE7EaMe3l+hJTBWXKP8BR2F6x9kpJlheaE49cyXivRQSRHaKLxfsagilFjxbUn9K9/Al40+BA==",
+  "success": true,
+  "projectFilePath": "/Users/42430/testspace/dotnet-crud/aws-csharp.csproj",
+  "expectedPackageFiles": [
+    "/Users/42430/.nuget/packages/amazon.lambda.core/1.1.0/amazon.lambda.core.1.1.0.nupkg.sha512",
+    "/Users/42430/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.0.1/amazon.lambda.serialization.systemtextjson.2.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

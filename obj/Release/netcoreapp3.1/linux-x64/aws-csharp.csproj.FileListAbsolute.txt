@@ -1,0 +1,12 @@
+/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/linux-x64/CsharpHandlers.deps.json
+/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/linux-x64/CsharpHandlers.runtimeconfig.json
+/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/linux-x64/CsharpHandlers.runtimeconfig.dev.json
+/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/linux-x64/CsharpHandlers.dll
+/Users/42430/testspace/dotnet-crud/bin/Release/netcoreapp3.1/linux-x64/CsharpHandlers.pdb
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/aws-csharp.csprojAssemblyReference.cache
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/aws-csharp.AssemblyInfoInputs.cache
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/aws-csharp.AssemblyInfo.cs
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/aws-csharp.csproj.CoreCompileInputs.cache
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/CsharpHandlers.dll
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/CsharpHandlers.pdb
+/Users/42430/testspace/dotnet-crud/obj/Release/netcoreapp3.1/linux-x64/aws-csharp.genruntimeconfig.cache

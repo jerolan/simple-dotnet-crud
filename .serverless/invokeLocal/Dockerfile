@@ -1,0 +1,1 @@
+FROM lambci/lambda:dotnetcore3.1
