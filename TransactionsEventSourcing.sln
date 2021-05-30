@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionsEventSourcing",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws-csharp", "TransactionsEventSourcing\src\aws-csharp.csproj", "{03BCBB49-35A2-445C-BABE-4E952E514E8D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AEB9628C-7D77-4518-9899-F14B36E13B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsEventSourcing.Tests", "TransactionsEventSourcing\test\TransactionsEventSourcing.Tests\TransactionsEventSourcing.Tests.csproj", "{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,22 @@ Global
 		{03BCBB49-35A2-445C-BABE-4E952E514E8D}.Release|x64.Build.0 = Release|Any CPU
 		{03BCBB49-35A2-445C-BABE-4E952E514E8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{03BCBB49-35A2-445C-BABE-4E952E514E8D}.Release|x86.Build.0 = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Debug|x86.Build.0 = Debug|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|x64.Build.0 = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03BCBB49-35A2-445C-BABE-4E952E514E8D} = {C2BF31F8-DB6D-4136-B847-3585209B2C91}
+		{AEB9628C-7D77-4518-9899-F14B36E13B9D} = {C2BF31F8-DB6D-4136-B847-3585209B2C91}
+		{6CEDC8E9-AC5E-415C-8A2F-4C7481F19A64} = {AEB9628C-7D77-4518-9899-F14B36E13B9D}
 	EndGlobalSection
 EndGlobal
