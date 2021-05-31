@@ -1,9 +1,10 @@
+using System;
+
 namespace TransactionsEventSourcing
 {
   public class Transaction
   {
     public decimal Amount { get; set; }
-
-    public Transaction() { }
+    public Guid CustomerId { get; set; }
   }
 }

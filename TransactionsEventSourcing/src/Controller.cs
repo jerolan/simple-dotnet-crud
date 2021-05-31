@@ -1,6 +1,6 @@
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using System.Collections.Generic;
+using System;
 using System.Net;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -8,24 +8,16 @@ namespace TransactionsEventSourcing
 {
   public class Controller
   {
+    private readonly IRepository<Transaction> _repository;
+
+    public Controller()
+    {
+      _repository = new InMemoryRepository();
+    }
+
     public APIGatewayProxyResponse GetTransactionsHandler(APIGatewayProxyRequest request)
     {
-      var list = new List<Transaction>();
-
-      list.Add(
-        new Transaction()
-        {
-          Amount = 10
-        }
-      );
-
-      list.Add(
-        new Transaction()
-        {
-          Amount = 20
-        }
-      );
-
+      var list = new GetTransactionList(_repository).Handle(new GetTransactionListQuery());
       var response = new APIGatewayProxyResponse()
       {
         StatusCode = (int)HttpStatusCode.OK,
