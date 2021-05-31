@@ -10,9 +10,9 @@ namespace TransactionsEventSourcing
   {
     private readonly IRepository<Transaction> _repository;
 
-    public Controller()
+    public Controller(InMemoryRepository repository = null)
     {
-      _repository = new InMemoryRepository();
+      _repository = repository ?? new InMemoryRepository();
     }
 
     public APIGatewayProxyResponse GetTransactionsHandler(APIGatewayProxyRequest request)
@@ -29,10 +29,11 @@ namespace TransactionsEventSourcing
 
     public APIGatewayProxyResponse CreateTransactionsHandler(APIGatewayProxyRequest request)
     {
+      var transaction = JsonConvert.DeserializeObject<Transaction>(request.Body);
       var createdTransaction = new CreateTransaction(_repository).
         Handle(new CreateTransactionCommand()
         {
-          Amount = 200
+          Amount = transaction.Amount
         });
 
       var response = new APIGatewayProxyResponse()

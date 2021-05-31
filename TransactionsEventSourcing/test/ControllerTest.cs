@@ -14,24 +14,31 @@ namespace TransactionsEventSourcing.Tests
     public void When_GetTransactions_Then_RespondWithAListOfTransactions()
     {
       // arrange
-      APIGatewayProxyRequest request = new APIGatewayProxyRequest();
-
+      var repository = new InMemoryRepository();
+      var request = new APIGatewayProxyRequest();
+      var createdTransaction = new CreateTransaction(repository);
       var list = new List<Transaction>();
-      list.Add(
-        new Transaction()
+
+      list.Add(new Transaction()
+      {
+        Amount = 10
+      });
+
+      list.Add(new Transaction()
+      {
+        Amount = 20
+      });
+
+      foreach (var item in list)
+      {
+        createdTransaction.Handle(new CreateTransactionCommand()
         {
-          Amount = 10
-        }
-      );
-      list.Add(
-        new Transaction()
-        {
-          Amount = 20
-        }
-      );
+          Amount = item.Amount
+        });
+      }
 
       // act
-      var response = new Controller().GetTransactionsHandler(request);
+      var response = new Controller(repository).GetTransactionsHandler(request);
 
       // asset
       var listResponse = JsonConvert.DeserializeObject<List<Transaction>>(response.Body);
@@ -50,19 +57,12 @@ namespace TransactionsEventSourcing.Tests
     public void When_CreateTransactions_Then_RespondWithAListWithANewElement()
     {
       // arrange
-      Controller controller = new Controller();
-      APIGatewayProxyRequest request = new APIGatewayProxyRequest();
-
-      var transaction = new Transaction()
-      {
-        Amount = 200
-      };
-
-      var response = controller.GetTransactionsHandler(request);
+      var request = new APIGatewayProxyRequest();
+      var transaction = new Transaction() { Amount = 299 };
+      request.Body = JsonConvert.SerializeObject(transaction);
 
       // act
-      request.Body = "{\"amount\":200}";
-      response = controller.CreateTransactionsHandler(request);
+      var response = new Controller().CreateTransactionsHandler(request);
 
       // asset
       var transactionResponse = JsonConvert.DeserializeObject<Transaction>(response.Body);
