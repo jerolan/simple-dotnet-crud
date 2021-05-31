@@ -1,7 +1,7 @@
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using System;
 using System.Net;
+using Newtonsoft.Json;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 namespace TransactionsEventSourcing
@@ -17,11 +17,28 @@ namespace TransactionsEventSourcing
 
     public APIGatewayProxyResponse GetTransactionsHandler(APIGatewayProxyRequest request)
     {
-      var list = new GetTransactionList(_repository).Handle(new GetTransactionListQuery());
+      var list = new GetTransactionList(_repository).Handle();
       var response = new APIGatewayProxyResponse()
       {
         StatusCode = (int)HttpStatusCode.OK,
-        Body = list.ToString(),
+        Body = JsonConvert.SerializeObject(list),
+      };
+
+      return response;
+    }
+
+    public APIGatewayProxyResponse CreateTransactionsHandler(APIGatewayProxyRequest request)
+    {
+      var createdTransaction = new CreateTransaction(_repository).
+        Handle(new CreateTransactionCommand()
+        {
+          Amount = 200
+        });
+
+      var response = new APIGatewayProxyResponse()
+      {
+        StatusCode = (int)HttpStatusCode.Created,
+        Body = JsonConvert.SerializeObject(createdTransaction),
       };
 
       return response;

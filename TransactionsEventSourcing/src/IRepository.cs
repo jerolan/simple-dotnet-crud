@@ -5,12 +5,11 @@ namespace TransactionsEventSourcing
 {
   public interface IRepository<T>
   {
-    T Find();
-    IEnumerable<T> Get(T t);
-    T GetByID(int tId);
-    void Insert(T t);
-    void Delete(int tId);
-    void Update(T t);
+    IEnumerable<T> GetAll();
+    T GetById(Guid id);
+    void Insert(T employee);
+    void Update(T employee);
+    void Delete(Guid id);
     void Save();
   }
 }

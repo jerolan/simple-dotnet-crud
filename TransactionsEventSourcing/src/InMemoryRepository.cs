@@ -1,59 +1,62 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TransactionsEventSourcing
 {
   public class InMemoryRepository : IRepository<Transaction>
   {
-    public Transaction Find()
+    private readonly List<Transaction> _store;
+    public InMemoryRepository()
     {
-      throw new Exception("No impl");
+      _store = new List<Transaction>();
     }
 
-    public IEnumerable<Transaction> Get(Transaction transaction)
+    public IEnumerable<Transaction> GetAll()
     {
-      var list = new List<Transaction>();
-
-      list.Add(
-        new Transaction()
-        {
-          Amount = 10
-        }
-      );
-
-      list.Add(
-        new Transaction()
-        {
-          Amount = 20
-        }
-      );
-
-      return list;
+      return _store;
     }
 
-    public Transaction GetByID(int tId)
+    public Transaction GetById(Guid transactionId)
     {
-      throw new Exception("No impl");
+      return _store.Find(item => item.CustomerId == transactionId);
     }
 
     public void Insert(Transaction transaction)
     {
-      throw new Exception("No impl");
+      _store.Add(transaction);
     }
 
-    public void Delete(int tId)
+    public void Delete(Guid transactionId)
     {
-      throw new Exception("No impl");
+      _store.Remove(new Transaction() { TransactionId = transactionId });
     }
 
     public void Update(Transaction transaction)
     {
-      throw new Exception("No impl");
+      var index = _store.IndexOf(new Transaction() { TransactionId = transaction.TransactionId });
+      var current = _store[index];
+      CopyValues(current, transaction);
+      _store[index] = current;
     }
 
     public void Save()
     {
       throw new Exception("No impl");
+    }
+
+    private void CopyValues<T>(T target, T source)
+    {
+      Type t = typeof(T);
+
+      var properties = t.GetProperties().Where(prop => prop.CanRead && prop.CanWrite);
+
+      foreach (var prop in properties)
+      {
+        var value = prop.GetValue(source, null);
+        if (value != null)
+          prop.SetValue(target, value, null);
+      }
     }
   }
 }

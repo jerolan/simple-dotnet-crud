@@ -4,16 +4,6 @@ using System.Linq;
 
 namespace TransactionsEventSourcing
 {
-  public class GetTransactionListQuery
-  {
-    public Guid CustomerId { get; }
-
-    public GetTransactionListQuery()
-    {
-      CustomerId = new Guid();
-    }
-  }
-
   public class GetTransactionList
   {
     private readonly IRepository<Transaction> _repository;
@@ -22,10 +12,9 @@ namespace TransactionsEventSourcing
       _repository = repository;
     }
 
-    public List<Transaction> Handle(GetTransactionListQuery request)
+    public List<Transaction> Handle()
     {
-      var filter = new Transaction() { CustomerId = request.CustomerId };
-      var list = _repository.Get(filter);
+      var list = _repository.GetAll();
       return list.ToList();
     }
   }
